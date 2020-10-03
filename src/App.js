@@ -1,6 +1,6 @@
 import React from 'react';
 
-import portrait from './images/IMG_20150715_111754~2.jpg';
+import portrait from './images/portrait.jpg';
 
 function App() {
   return (
