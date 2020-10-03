@@ -5,9 +5,6 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   background-color: black;
   color: white;
   padding: 20px;
@@ -28,21 +25,22 @@ body {
   }
 }
 
-P {
+.text__align--center {
   text-align: center;
 }
 
-
-.circular--landscape {
+.portrait--container {
   position: relative;
   width: 200px;
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto;
-}
+  background: red;
 
-.portrait {
-  width: 100%;
-  height: auto;
+  .portrait {
+    width: 100%;
+    height: auto;
+  }
+
 }

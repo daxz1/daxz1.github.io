@@ -7,12 +7,10 @@ function App() {
     <div className="flex__container">
       <div className="grid__container">
         <main className="content">
-          <div className="circular--landscape">
+          <div className="portrait--container">
             <img src={portrait} alt="Dav Singh (daxz1)" className="portrait"/>
           </div>
-          <div>
-            <p>Dav Singh (daxz1)</p>
-          </div>
+          <p className="text__align--center">Dav Singh (daxz1)</p>
         </main>
       </div>
     </div>
