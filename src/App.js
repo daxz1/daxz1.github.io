@@ -2,7 +2,7 @@ import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 import portrait from './images/portrait.jpg';
 
-const SOCIALS = [
+const SOCIAL_URLS = [
   'https://www.twitter.com/davsinghc',
   'https://www.linkedin.com/in/dxc/',
   'https://www.instagram.com/davsinghc/'
@@ -24,7 +24,7 @@ function App() {
           </p>
           <div className="flex__container">
             <div className="social__container">
-              { SOCIALS.map(url => {
+              { SOCIAL_URLS.map(url => {
                 return (<SocialIcon
                   key={url}
                   url={url}
