@@ -1,6 +1,12 @@
 import React from 'react';
-
+import { SocialIcon } from 'react-social-icons';
 import portrait from './images/portrait.jpg';
+
+const SOCIALS = [
+  'https://www.twitter.com/davsinghc',
+  'https://www.linkedin.com/in/dxc/',
+  'https://www.instagram.com/davsinghc/'
+];
 
 function App() {
   return (
@@ -11,6 +17,23 @@ function App() {
             <img src={portrait} alt="Dav Singh (daxz1)" className="portrait"/>
           </div>
           <p className="text__align--center">Dav Singh (daxz1)</p>
+          <p className="text__align--center">
+            Frontend Engineer currently working at {' '}
+            <a href="https://www.prodyna.com/en/" target="_blank" className="text__link--no-styles"><strong>@prodyna</strong></a> {' '}
+            London office
+          </p>
+          <div className="flex__container">
+            <div className="social__container">
+              { SOCIALS.map(url => {
+                return (<SocialIcon
+                  key={url}
+                  url={url}
+                  bgColor="rgb(255,255,255)"
+                  style={{ height: 25, width: 25 }}
+                />)
+              })}
+            </div>
+          </div>
         </main>
       </div>
     </div>
