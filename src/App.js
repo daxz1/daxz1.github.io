@@ -20,7 +20,7 @@ function App() {
           <p className="text__align--center">
             Frontend Engineer currently working at {' '}
             <a href="https://www.prodyna.com/en/" target="_blank" rel="noopener noreferrer" className="text__link--no-styles"><strong>@prodyna</strong></a> {' '}
-            London office
+            London office.
           </p>
           <div className="flex__container">
             <div className="social__container">
