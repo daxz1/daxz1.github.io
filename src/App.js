@@ -5,7 +5,6 @@ import portrait from './images/portrait.jpg';
 const SOCIAL_URLS = [
   'https://www.twitter.com/davsinghc',
   'https://www.linkedin.com/in/dxc/',
-  'https://www.instagram.com/davsinghc/'
 ];
 
 function App() {
