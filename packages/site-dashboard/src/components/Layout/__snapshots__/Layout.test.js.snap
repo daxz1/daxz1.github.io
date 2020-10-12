@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component Matches the snapshot 1`] = `
+<div
+  className="wrapper bg-colour bg-colour--woodsmoke"
+>
+  <div
+    className="grid"
+  >
+    <div>
+      Layout
+    </div>
+  </div>
+</div>
+`;
