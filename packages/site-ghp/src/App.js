@@ -15,7 +15,7 @@ function App() {
           <div className="portrait--container">
             <img src={portrait} alt="Dav Singh (daxz1)" className="portrait"/>
           </div>
-          <p className="text__align--center">Dav Singh (daxz1)</p>
+          <p className="text__align--center">daxz1</p>
           <p className="text__align--center">
             Frontend Engineer currently working at {' '}
             <a href="https://www.prodyna.com/en/" target="_blank" rel="noopener noreferrer" className="text__link--no-styles"><strong>@prodyna</strong></a> {' '}
