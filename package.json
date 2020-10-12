@@ -6,11 +6,12 @@
     "dashboard": "yarn workspace site-dashboard start",
     "dashboard-sb": "yarn workspace site-dashboard storybook",
     "dashboard-test" : "yarn workspace site-dashboard test",
+    "dashboard-server": "yarn workspace server-dashboard start",
     "ghp": "yarn workspace site-ghp start",
     "ghp-sb": "yarn workspace site-ghp storybook",
     "ghp-test": "yarn workspace site-ghp test",
     "start": "concurrently --kill-others-on-fail \"yarn dashboard\"  \"yarn ghp\" ",
-    "start-development": "concurrently --kill-others-on-fail \"yarn dashboard\"  \"yarn ghp\" \"yarn dashboard-sb\" \"yarn ghp-sb\" "
+    "start-development": "concurrently --kill-others-on-fail \"yarn dashboard\"  \"yarn ghp\" \"yarn dashboard-sb\" \"yarn ghp-sb\" \"yarn dashboard-server\" "
   },
   "dependencies": {
     "concurrently": "^5.3.0"
