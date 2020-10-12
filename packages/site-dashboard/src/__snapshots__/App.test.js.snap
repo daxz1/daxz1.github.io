@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application component Matches the snapshot 1`] = `
+<div
+  className="wrapper bg-colour bg-colour--woodsmoke"
+>
+  <div
+    className="grid"
+  >
+    <div
+      className="row_one"
+    >
+      <div
+        className="tile"
+      >
+        <div
+          className="loader"
+        />
+      </div>
+      <div
+        className="tile"
+      >
+        <div
+          className="loader"
+        />
+      </div>
+      <div
+        className="tile"
+      >
+        <div
+          className="loader"
+        />
+      </div>
+      <div
+        className="tile"
+      >
+        <div
+          className="loader"
+        />
+      </div>
+      <div
+        className="tile"
+      >
+        <div
+          className="tress__header"
+        >
+          Sales
+        </div>
+        <div
+          className="tress__title"
+        >
+          Week on Week
+        </div>
+        <div
+          className="tress__content tress__content--java"
+        >
+          <span />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
