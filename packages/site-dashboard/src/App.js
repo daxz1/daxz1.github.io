@@ -11,17 +11,6 @@ export const App = () => {
         <TotalPositive/>
         <DailyTestsProcessed/>
         <TotalTestsProcessed/>
-
-        <TileWithCountUp
-          header="Sales"
-          title="Week on Week"
-          content={{
-            value: 20,
-            suffix: '%'
-          }}
-          cssClasses={['tress__content--java']}
-        />
-
       </div>
     </Layout>
   );
