@@ -38,25 +38,6 @@ exports[`Application component Matches the snapshot 1`] = `
           className="loader"
         />
       </div>
-      <div
-        className="tile"
-      >
-        <div
-          className="tress__header"
-        >
-          Sales
-        </div>
-        <div
-          className="tress__title"
-        >
-          Week on Week
-        </div>
-        <div
-          className="tress__content tress__content--java"
-        >
-          <span />
-        </div>
-      </div>
     </div>
   </div>
 </div>
