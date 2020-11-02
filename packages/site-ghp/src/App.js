@@ -9,7 +9,8 @@ const SOCIAL_URLS = [
 
 function App() {
   return (
-    <div className="flex__container">
+    <>
+    <section className="flex__container">
       <div className="grid__container">
         <main className="content">
           <div className="portrait--container">
@@ -35,7 +36,21 @@ function App() {
           </div>
         </main>
       </div>
-    </div>
+    </section>
+
+    <section className='flex__container'>
+      <div className='grid__container--full'>
+        <div className='content section__projects'>
+          <div className="powwownow">
+            Powwownow
+          </div>
+          <div className='fn'>
+            Financial News
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
 

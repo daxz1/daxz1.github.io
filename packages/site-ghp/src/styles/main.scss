@@ -1,5 +1,7 @@
 @import "fadeIn";
 
+@import "section__projects";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,10 +26,20 @@ body {
 .grid__container {
   display: grid;
   width: 320px;
-  height: 320px;
   .content {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid__container--full {
+  display: grid;
+  width: 960px;
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
   }
 }
 
@@ -50,12 +62,18 @@ body {
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto;
-  background: red;
   .portrait {
     width: 100%;
     height: auto;
+    transition: transform .4s;
+    cursor: pointer;
+  }
+  &:hover .portrait {
+    transform: rotate(-10deg) scale(1.3);
+    transform-origin: 50% 50%;
   }
 }
+
 
 .social__container {
   display: flex;

@@ -19,9 +19,9 @@ export default {
 
 const Template = (args) => <Tile {...args} />;
 
-export const TileWithContent = Template.bind({});
+export const DefaultView = Template.bind({});
 
-TileWithContent.args = {
+DefaultView.args = {
   header: 'Header Text',
   title: 'Title Text',
   content: 'Content Text',

@@ -7,7 +7,7 @@ export default {
   argTypes: {
     header: { control: 'text' },
     title: { control: 'text' },
-    content: { control: 'text' },
+    content: { control: 'object'},
     cssClasses: {
       control: {
         type: 'select',
@@ -17,6 +17,16 @@ export default {
   },
 };
 
-export const StandardView = () => <TileWithCountUp />;
+const Template = (args) => <TileWithCountUp {...args} />
 
-StandardView.storyName = 'Default View';
+export const DefaultView = Template.bind(({}));
+
+DefaultView.args = {
+  header: 'Header Text',
+  title: 'Title Text',
+  content: {
+    value: 20,
+    suffix: '%'
+  },
+  cssClasses: 'tress__content--sushi'
+};
