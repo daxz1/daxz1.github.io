@@ -23,6 +23,14 @@
     "storybook": "start-storybook -p 6007 -s public",
     "build-storybook": "build-storybook -s public"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": ["prettier --write"]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -48,6 +56,9 @@
     "@storybook/react": "^6.0.26",
     "babel-loader": "^8.1.0",
     "gh-pages": "^3.1.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.1.2",
     "react-is": "^16.13.1"
   }
 }
