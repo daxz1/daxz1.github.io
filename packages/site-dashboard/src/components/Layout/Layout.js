@@ -8,8 +8,6 @@ import React from "react";
  */
 export const Layout = ({ children }) => (
   <div className="wrapper bg-colour bg-colour--woodsmoke">
-    <div className="grid">
-      {children}
-    </div>
+    <div className="grid">{children}</div>
   </div>
 );

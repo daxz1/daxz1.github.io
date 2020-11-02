@@ -6,9 +6,7 @@ import { TileLoader } from "./TileLoader";
 
 describe("TileLoader Component", () => {
   test("Matches the snapshot", () => {
-    const Application = create(
-      <TileLoader />
-    )
+    const Application = create(<TileLoader />);
     expect(Application.toJSON()).toMatchSnapshot();
-  })
+  });
 });

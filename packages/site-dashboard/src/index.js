@@ -1,7 +1,7 @@
-import React, {StrictMode} from 'react';
+import React, { StrictMode } from "react";
 import { ReactQueryDevtools } from "react-query-devtools";
-import {QueryCache, ReactQueryCacheProvider } from "react-query";
-import ReactDOM from 'react-dom';
+import { QueryCache, ReactQueryCacheProvider } from "react-query";
+import ReactDOM from "react-dom";
 import { App } from "./App";
 import "./css/main.scss";
 
@@ -14,7 +14,7 @@ ReactDOM.render(
       <App />
     </ReactQueryCacheProvider>
   </StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

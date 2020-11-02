@@ -1,7 +1,7 @@
 import React from "react";
 import Numbro from "numbro";
-import {Tile, TileLoader} from "../components";
-import {useCases} from "../hooks/useCases";
+import { Tile, TileLoader } from "../components";
+import { useCases } from "../hooks/useCases";
 
 /**
  *
@@ -12,19 +12,21 @@ export const DailyPositive = () => {
   const { isLoading, data, isError } = useCases();
 
   if (isLoading) {
-    return (<TileLoader />)
+    return <TileLoader />;
   }
 
   if (isError) {
-    return (<div />)
+    return <div />;
   }
 
   return (
     <Tile
       header="Daily people tested positive"
       title="Cases in United Kingdom"
-      content={Numbro(data.data[0].newCases).format({thousandSeparated: true})}
-      cssClasses={['tress__content--sushi']}
+      content={Numbro(data.data[0].newCases).format({
+        thousandSeparated: true,
+      })}
+      cssClasses={["tress__content--sushi"]}
     />
-  )
-}
+  );
+};

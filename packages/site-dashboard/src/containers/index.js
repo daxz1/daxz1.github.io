@@ -7,5 +7,5 @@ export {
   DailyPositive,
   TotalPositive,
   DailyTestsProcessed,
-  TotalTestsProcessed
-}
+  TotalTestsProcessed,
+};

@@ -10,7 +10,7 @@ describe("Layout Component", () => {
       <Layout>
         <div>Layout</div>
       </Layout>
-      );
+    );
     expect(Application.toJSON()).toMatchSnapshot();
   });
 });
