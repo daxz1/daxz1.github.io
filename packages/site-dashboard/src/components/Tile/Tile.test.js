@@ -11,8 +11,9 @@ describe("Tile Component", () => {
         header="Header"
         title="Title"
         content="Content"
-        cssClasses="tress__content--sushi"
-      />);
+        cssClasses={["tress__content--sushi"]}
+      />
+    );
     expect(Application.toJSON()).toMatchSnapshot();
   });
 });
