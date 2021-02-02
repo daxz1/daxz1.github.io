@@ -1,6 +1,8 @@
 import { Link, Button } from "@material-ui/core";
 import { Switch, Route, Link as RouterLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import Episodes from "./Episodes";
+import Episode from "./Episode";
 
 const useStyles = makeStyles(theme => ({
     main: {
@@ -38,10 +40,10 @@ export default function Layout():JSX.Element {
             <main className={classes.main}>
                 <Switch>
                     <Route exact path="/episodes">
-                        Episodes
+                        <Episodes />
                     </Route>
-                    <Route exact path="/episodes:id">
-                        Episodes
+                    <Route exact path="/episodes/:id">
+                        <Episode />
                     </Route>
                     <Route exact path="/characters">
                         Characters
