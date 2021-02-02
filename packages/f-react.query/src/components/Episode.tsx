@@ -1,7 +1,7 @@
 import {useQuery} from "react-query";
 import {useParams} from "react-router";
 import {Typography} from "@material-ui/core";
-import Character from './Character';
+import Character from './Character/Character';
 
 interface IEpisode {
     id: string;

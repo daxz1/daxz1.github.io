@@ -1,38 +1,10 @@
 import { useQuery } from 'react-query';
 import { Typography, Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
-
-interface ICharacterResponse {
-  created: string;
-  episode: [],
-  gender: string;
-  image: string;
-  location: [];
-  origin: [];
-  url: string;
-  id: string;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-}
-
-const fetchCharacter = async (id:string|undefined):Promise<ICharacterResponse> => {
-
-  if (id === undefined) {
-    throw new Error('id undefined');
-  }
-
-  const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-
-  if (!response.ok) {
-    throw new Error('Fetch Error');
-  }
-  return await response.json();
-};
+import { fetchCharacter } from './helpers';
 
 interface ICharacterProps {
-  id?: string;
+  id: string;
 }
 
 export default function Character({ id }:ICharacterProps):JSX.Element {

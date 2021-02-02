@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Episodes from "./Episodes";
 import Episode from "./Episode";
 import Characters from './Characters';
-import Character from './Character';
+import CharacterBio from './Character/CharacterBio';
 
 const useStyles = makeStyles(theme => ({
     main: {
@@ -51,7 +51,7 @@ export default function Layout():JSX.Element {
                         <Characters />
                     </Route>
                     <Route exact path="/characters/:id">
-                        <Character />
+                        <CharacterBio />
                     </Route>
                     <Route path="/">
                         Home
