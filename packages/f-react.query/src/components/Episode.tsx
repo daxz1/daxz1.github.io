@@ -1,0 +1,45 @@
+import {useQuery} from "react-query";
+import {useParams} from "react-router";
+import {Typography} from "@material-ui/core";
+import Character from './Character';
+
+interface IEpisode {
+    id: string;
+    name: string;
+    air_date: string;
+    episode: string;
+    characters: []
+}
+
+const fetchEpisode = async (id:string):Promise<IEpisode> => {
+    const res = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+    return await res.json();
+};
+
+export default function Episode():JSX.Element {
+
+    const { id } = useParams<{id:string}>();
+
+    const {data, status } = useQuery([`episode`, id], () => fetchEpisode(id));
+
+    if (status === 'loading') {
+        return <p>Loading</p>;
+    }
+
+    if (data) {
+        return (
+          <div>
+              <Typography variant="h2">{data.name}</Typography>
+              <Typography variant="body1">{data.air_date}</Typography>
+              <Typography variant="h4">Characters</Typography>
+              {data.characters.map((character:any):JSX.Element => {
+                  const urlParts = character.split('/').filter(Boolean);
+                  const id = urlParts.pop();
+                  return <Character key={id} id={id} />
+              })}
+          </div>
+        )
+    }
+
+    return <p>Error</p>
+};
