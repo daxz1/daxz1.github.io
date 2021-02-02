@@ -3,6 +3,8 @@ import { Switch, Route, Link as RouterLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Episodes from "./Episodes";
 import Episode from "./Episode";
+import Characters from './Characters';
+import Character from './Character';
 
 const useStyles = makeStyles(theme => ({
     main: {
@@ -46,10 +48,10 @@ export default function Layout():JSX.Element {
                         <Episode />
                     </Route>
                     <Route exact path="/characters">
-                        Characters
+                        <Characters />
                     </Route>
                     <Route exact path="/characters/:id">
-                        Characters
+                        <Character />
                     </Route>
                     <Route path="/">
                         Home

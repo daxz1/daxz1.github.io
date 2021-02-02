@@ -10,14 +10,14 @@ const fetchEpisodes = async () => {
 
 export default function Episodes():JSX.Element {
 
-    const { data, status, error } = useQuery('epsiodes', fetchEpisodes);
+    const { data, status } = useQuery('episodes', fetchEpisodes);
 
     if (status === 'loading') {
         return <p>Loading</p>;
     }
 
     if (status === 'error') {
-        return <p>Error {error}</p>
+        return <p>Error</p>
     }
 
     return (
