@@ -1,24 +1,44 @@
-import React, {useState} from 'react';
-import Nav from "./components/Nav";
-import Planets from "./components/Planets";
-import People from "./components/People";
+import {QueryClient, QueryClientProvider} from "react-query";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ReactQueryDevtools } from "react-query/devtools";
+import Layout from "./components/Layout";
 
-function App():JSX.Element {
+const queryClient = new QueryClient();
 
-    const [page, setPage] = useState('planets');
-
-  return (
-      <div>
-          <h1>Star Wars Info</h1>
-          <p>Viewing {page} page</p>
-          <Nav setPage={setPage}/>
-          <div className='content'>
-              {page === 'planets' ? <Planets /> : <People />}
-          </div>
-      </div>
-  );
+export default function App(): JSX.Element {
+    return (
+        <QueryClientProvider client={queryClient}>
+            <Router>
+                <ThemeProvider theme={theme} >
+                    <Layout />
+                    <ReactQueryDevtools initialIsOpen />
+                </ThemeProvider>
+            </Router>
+        </QueryClientProvider>
+    );
 }
 
-
-
-export default App;
+const theme = createMuiTheme({
+    typography: {
+        h1: {
+            fontFamily: "Roboto Mono, monospace",
+        },
+        h2: {
+            fontFamily: "Roboto Mono, monospace",
+        },
+        h3: {
+            fontFamily: "Roboto Mono, monospace",
+        },
+        h4: {
+            fontFamily: "Roboto Mono, monospace",
+        },
+        h5: {
+            fontFamily: "Roboto Mono, monospace",
+        },
+        h6: {
+            fontFamily: "Roboto Mono, monospace",
+        },
+    },
+});
