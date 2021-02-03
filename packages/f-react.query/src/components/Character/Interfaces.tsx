@@ -1,4 +1,4 @@
-export interface ICharacterResponse {
+export interface ICharacter {
   created: string;
   episode: [],
   gender: string;

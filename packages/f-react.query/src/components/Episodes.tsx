@@ -45,7 +45,7 @@ export default function Episodes():JSX.Element {
         return (
           <Grid container>
               <Grid item xs={12}>
-                  <Typography variant="h2">Episodes</Typography>
+                  <Typography variant="h5">Episodes</Typography>
               </Grid>
               {data.results.map((episode:IEpisode)=> {
                   return (

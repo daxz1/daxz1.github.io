@@ -5,6 +5,7 @@ import Episodes from "./Episodes";
 import Episode from "./Episode";
 import Characters from './Characters';
 import CharacterBio from './Character/CharacterBio';
+import Optimistic from './Optimistic';
 
 const useStyles = makeStyles(theme => ({
     main: {
@@ -35,6 +36,9 @@ export default function Layout():JSX.Element {
                 <Link component={RouterLink} to="/characters">
                     <Button color='primary'>Characters</Button>
                 </Link>
+                <Link component={RouterLink} to="/optimistic">
+                    <Button color='primary'>Optimistic</Button>
+                </Link>
             </nav>
             <main className={classes.main}>
                 <Switch>
@@ -49,6 +53,9 @@ export default function Layout():JSX.Element {
                     </Route>
                     <Route exact path="/characters/:id">
                         <CharacterBio />
+                    </Route>
+                    <Route exact path="/optimistic">
+                        <Optimistic />
                     </Route>
                     <Route path="/">
                         <Redirect to="/episodes"/>

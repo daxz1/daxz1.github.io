@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
+import { ICharacter } from './Character/Interfaces';
 
 const useStyles = makeStyles({
   root: {
@@ -17,9 +18,19 @@ const useStyles = makeStyles({
   },
 });
 
-const fetchCharacters = async () => {
-  const res = await fetch("https://rickandmortyapi.com/api/character/");
-  return await res.json();
+interface ICharacterResponse {
+  info:[];
+  results: ICharacter[]
+}
+
+const fetchCharacters = async ():Promise<ICharacterResponse> => {
+  const response = await fetch("https://rickandmortyapi.com/api/character/");
+
+  if (!response.ok) {
+    throw new Error('Fetch Error');
+  }
+
+  return await response.json();
 };
 
 export default function Characters():JSX.Element {
@@ -37,9 +48,9 @@ export default function Characters():JSX.Element {
           <Typography variant="h2">Characters</Typography>
         </Grid>
 
-        {data.results.map((person:any) => {
+        {data.results.map((person:ICharacter) => {
           return (
-              <Card className={classes.root}>
+              <Card key={person.id} className={classes.root}>
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
@@ -63,6 +74,5 @@ export default function Characters():JSX.Element {
       </Grid>
     )
   }
-
-  return <p>error</p>
-}
+  return <p>Error</p>
+};

@@ -23,9 +23,7 @@ const useStyles = makeStyles({
 export default function CharacterBio():JSX.Element {
 
   const classes = useStyles();
-
   const { id } = useParams<{id:string}>();
-
   const { data, status } = useQuery(['character', id], () =>  fetchCharacter(id))
 
   if (status === 'loading') {
