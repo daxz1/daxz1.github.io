@@ -37,7 +37,7 @@ export default function Characters():JSX.Element {
           <Typography variant="h2">Characters</Typography>
         </Grid>
 
-        {data.results.map((person) => {
+        {data.results.map((person:any) => {
           return (
               <Card className={classes.root}>
                 <CardActionArea>

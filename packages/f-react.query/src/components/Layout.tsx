@@ -1,5 +1,5 @@
 import { Link, Button } from "@material-ui/core";
-import { Switch, Route, Link as RouterLink } from "react-router-dom";
+import { Switch, Route, Link as RouterLink, Redirect } from 'react-router-dom';
 import { makeStyles } from "@material-ui/core/styles";
 import Episodes from "./Episodes";
 import Episode from "./Episode";
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         margin: "0 auto",
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "#000",
+        // backgroundColor: "#000",
         color: "#fff",
         "& button": {
             margin: theme.spacing(1)
@@ -29,9 +29,6 @@ export default function Layout():JSX.Element {
     return (
         <div className="app">
             <nav className={classes.nav}>
-                <Link component={RouterLink} to="/">
-                    <Button color='primary'>Home</Button>
-                </Link>
                 <Link component={RouterLink} to="/episodes">
                     <Button color='primary'>Episodes</Button>
                 </Link>
@@ -54,7 +51,7 @@ export default function Layout():JSX.Element {
                         <CharacterBio />
                     </Route>
                     <Route path="/">
-                        Home
+                        <Redirect to="/episodes"/>
                     </Route>
                 </Switch>
             </main>
