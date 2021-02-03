@@ -27,16 +27,9 @@ app.get('/api/todos', async function(req, res) {
 
 app.post('/api/todos', function(req, res) {
   const { text } = req.body;
-
-  if (Math.random() > 0.7) {
-    res.status(500);
-    res.json({
-      message: 'Could not add item'
-    })
-    return;
-  }
-  items.push(text.toUpperCase());
-  res.json(text.toUpperCase());
+  const upperCaseText = text.toUpperCase()
+  items.push(upperCaseText);
+  res.json(upperCaseText);
 });
 
 //start your server on port 3001
