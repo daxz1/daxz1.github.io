@@ -6,6 +6,7 @@ import Episode from './Episode';
 import Characters from './Characters';
 import CharacterBio from './Character/CharacterBio';
 import Optimistic from './Optimistic';
+import Todos from './Todos';
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -36,8 +37,11 @@ export default function Layout(): JSX.Element {
         <Link component={RouterLink} to="/characters">
           <Button color='primary'>Characters</Button>
         </Link>
-        <Link component={RouterLink} to="/optimistic">
-          <Button color='primary'>Optimistic</Button>
+        <Link component={RouterLink} to="/query-todos">
+          <Button color='primary'>Query Todos</Button>
+        </Link>
+        <Link component={RouterLink} to="/redux-todos">
+          <Button color='primary'>Redux Todos</Button>
         </Link>
       </nav>
       <main className={classes.main}>
@@ -54,8 +58,11 @@ export default function Layout(): JSX.Element {
           <Route exact path="/characters/:id">
             <CharacterBio />
           </Route>
-          <Route exact path="/optimistic">
+          <Route exact path="/query-todos">
             <Optimistic />
+          </Route>
+          <Route exact path="/redux-todos">
+            <Todos />
           </Route>
           <Route path="/">
             <Redirect to="/episodes" />
