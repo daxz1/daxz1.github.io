@@ -27,6 +27,7 @@ app.get('/api/todos', async function(req, res) {
 
 app.post('/api/todos', function(req, res) {
   const { text } = req.body;
+  console.log('received:', text);
   const upperCaseText = text.toUpperCase()
   items.push(upperCaseText);
   res.json(upperCaseText);

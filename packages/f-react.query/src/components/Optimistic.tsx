@@ -18,10 +18,7 @@ export default function Optimistic(): JSX.Element {
     if (!response.ok) {
       throw new Error('Fetch Error');
     }
-    const d = await response.json();
-    console.log({ d });
-    return d;
-    // return await response.json();
+    return await response.json();
   });
 
   const addTodoMutation = useMutation(
@@ -91,7 +88,7 @@ export default function Optimistic(): JSX.Element {
     <Grid container>
       <Grid item xs={12}>
         <Box mt={2} mb={2}>
-          <Typography variant="h5">Todos</Typography>
+          <Typography variant="h5">Query Todos</Typography>
           {data && (
             <>
               <small>Updated At: {new Date(data.ts).toLocaleTimeString()}</small>
@@ -102,8 +99,8 @@ export default function Optimistic(): JSX.Element {
       </Grid>
       <Grid item xs={12}>
         <form
-          onSubmit={e => {
-            e.preventDefault();
+          onSubmit={event => {
+            event.preventDefault();
             addTodoMutation.mutate(text);
           }}
         >
