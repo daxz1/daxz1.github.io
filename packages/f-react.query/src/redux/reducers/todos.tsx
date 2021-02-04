@@ -4,7 +4,7 @@ const initialState = {
   items: [],
 };
 
-export default function(state = initialState, action: any) {
+export default function todos(state = initialState, action: any) {
   switch (action.type) {
     case ADD_TODO: {
       return {
