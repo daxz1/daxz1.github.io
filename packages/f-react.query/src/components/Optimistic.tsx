@@ -9,11 +9,11 @@ interface ITodos {
   ts: number
 }
 
-export default function Optimistic():JSX.Element {
+export default function Optimistic(): JSX.Element {
   const queryClient = useQueryClient();
   const [text, setText] = useState('');
 
-  const { status, data, isFetching } = useQuery('todos', async ():Promise<ITodos> => {
+  const { status, data, isFetching } = useQuery('todos', async (): Promise<ITodos> => {
     const response = await fetch('http://localhost:3001/api/todos');
     if (!response.ok) {
       throw new Error('Fetch Error');
@@ -28,15 +28,15 @@ export default function Optimistic():JSX.Element {
     async (text) => await fetch('http://localhost:3001/api/todos', {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
       },
       body: JSON.stringify({
-        text: text
-      })
+        text: text,
+      }),
     }),
     {
       onMutate: async (text: string) => {
-        setText('')
+        setText('');
         /**
          * The cancelQueries method can be used to cancel outgoing queries based on their query
          * keys or any other functionally accessible property/state of the query.
@@ -62,7 +62,7 @@ export default function Optimistic():JSX.Element {
         queryClient.setQueryData('todos', (old) => ({
           // @ts-ignore
           ...old,
-          items: [...old.items, text]
+          items: [...old.items, text],
         }));
 
         return previousValue;
@@ -79,12 +79,12 @@ export default function Optimistic():JSX.Element {
       },
       onSettled: () => {
         // Or we could re-fetch regardless if server fails or succeeds
-      }
-    }
+      },
+    },
   );
 
   if (status === 'loading') {
-    return <p>Loading</p>
+    return <p>Loading</p>;
   }
 
   return (
@@ -92,7 +92,7 @@ export default function Optimistic():JSX.Element {
       <Grid item xs={12}>
         <Box mt={2} mb={2}>
           <Typography variant="h5">Todos</Typography>
-          { data && (
+          {data && (
             <>
               <small>Updated At: {new Date(data.ts).toLocaleTimeString()}</small>
               <small>{isFetching ? ' Updating in background...' : ' '}</small>
@@ -104,7 +104,7 @@ export default function Optimistic():JSX.Element {
         <form
           onSubmit={e => {
             e.preventDefault();
-            addTodoMutation.mutate(text)
+            addTodoMutation.mutate(text);
           }}
         >
           <Grid item xs={12}>
@@ -117,7 +117,7 @@ export default function Optimistic():JSX.Element {
           <Grid item xs={12}>
             <Box mt={2} mb={2}>
               <Button variant="contained" color="primary" type="submit">
-                {addTodoMutation.isLoading? 'Creating...' : 'Create'}
+                {addTodoMutation.isLoading ? 'Creating...' : 'Create'}
               </Button>
             </Box>
           </Grid>
@@ -126,15 +126,15 @@ export default function Optimistic():JSX.Element {
 
       {data && (
         <List dense={true}>
-          {data.items.map((text:any, index:number) =>{
+          {data.items.map((text: any, index: number) => {
             return (
               <ListItem key={index}>
                 <ListItemText>{text}</ListItemText>
               </ListItem>
-            )
+            );
           })}
         </List>
       )}
     </Grid>
-  )
+  );
 }

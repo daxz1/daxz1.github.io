@@ -12,7 +12,7 @@ import { useParams } from 'react-router';
 const useStyles = makeStyles({
   root: {
     maxWidth: 300,
-    margin: "10px"
+    margin: '10px',
   },
   media: {
     width: 300,
@@ -20,11 +20,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CharacterBio():JSX.Element {
+export default function CharacterBio(): JSX.Element {
 
   const classes = useStyles();
-  const { id } = useParams<{id:string}>();
-  const { data, status } = useQuery(['character', id], () =>  fetchCharacter(id))
+  const { id } = useParams<{ id: string }>();
+  const { data, status } = useQuery(['character', id], () => fetchCharacter(id));
 
   if (status === 'loading') {
     return <p key={id}>Loading Character</p>;
@@ -51,8 +51,8 @@ export default function CharacterBio():JSX.Element {
           </CardContent>
         </CardActionArea>
       </Card>
-    )
+    );
   }
 
-  return (<p>Error</p>)
+  return (<p>Error</p>);
 }

@@ -1,6 +1,6 @@
 import { ICharacter } from './Interfaces';
 
-export const fetchCharacter = async (id:string|undefined):Promise<ICharacter> => {
+export const fetchCharacter = async (id: string | undefined): Promise<ICharacter> => {
   if (id === undefined) {
     throw new Error('id undefined');
   }
