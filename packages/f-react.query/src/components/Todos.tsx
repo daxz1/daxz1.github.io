@@ -11,11 +11,13 @@ interface ITodosProps {
 
 function Todos(props: ITodosProps): JSX.Element {
   const [text, setText] = useState('');
-  const ONCE = false;
   const { getTodo, todos } = props;
+
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     getTodo();
   }, []);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
     <Grid container>

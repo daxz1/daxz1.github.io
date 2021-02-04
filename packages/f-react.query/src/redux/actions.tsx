@@ -35,7 +35,6 @@ export const getTodo = () => async (dispatch: any) => {
     }
 
     const payload = await response.json();
-    console.log(payload);
     return dispatch({
       type: GET_TODO,
       payload,

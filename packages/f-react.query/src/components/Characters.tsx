@@ -23,19 +23,16 @@ interface ICharacterResponse {
   results: ICharacter[]
 }
 
-const fetchCharacters = async (): Promise<ICharacterResponse> => {
-  const response = await fetch('https://rickandmortyapi.com/api/character/');
-
-  if (!response.ok) {
-    throw new Error('Fetch Error');
-  }
-
-  return await response.json();
-};
-
 export default function Characters(): JSX.Element {
   const classes = useStyles();
-  const { status, data } = useQuery('characters', fetchCharacters);
+  const { status, data } = useQuery('characters', async (): Promise<ICharacterResponse> => {
+    const response = await fetch('https://rickandmortyapi.com/api/character/');
+    if (!response.ok) {
+      throw new Error('Fetch Error');
+    }
+
+    return await response.json();
+  });
 
   if (status === 'loading') {
     return <p>Loading</p>;
