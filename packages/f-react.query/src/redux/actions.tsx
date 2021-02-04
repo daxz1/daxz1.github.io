@@ -1,6 +1,6 @@
 import { ADD_TODO, GET_TODO } from './actionTypes';
 
-export const addTodo = (payload:any) => async (dispatch:any) => {
+export const addTodo = (payload: any) => async (dispatch: any) => {
   try {
     const response = await fetch('http://localhost:3001/api/todos', {
       method: 'POST',
@@ -9,7 +9,7 @@ export const addTodo = (payload:any) => async (dispatch:any) => {
       },
       body: JSON.stringify({
         text: payload,
-      })
+      }),
     });
     if (!response.ok) {
       throw new Error('Fetch Error');
@@ -18,8 +18,8 @@ export const addTodo = (payload:any) => async (dispatch:any) => {
     return dispatch({
       type: ADD_TODO,
       payload: {
-        items: [payload]
-      }
+        items: [payload],
+      },
     });
   } catch (e) {
     console.error('addTodo', e);
@@ -27,7 +27,7 @@ export const addTodo = (payload:any) => async (dispatch:any) => {
   }
 };
 
-export const getTodo = () => async (dispatch:any) => {
+export const getTodo = () => async (dispatch: any) => {
   try {
     const response = await fetch('http://localhost:3001/api/todos');
     if (!response.ok) {
@@ -35,10 +35,10 @@ export const getTodo = () => async (dispatch:any) => {
     }
 
     const payload = await response.json();
-    console.log(payload)
+    console.log(payload);
     return dispatch({
       type: GET_TODO,
-      payload
+      payload,
     });
 
   } catch (e) {

@@ -88,7 +88,7 @@ export default function Optimistic(): JSX.Element {
     <Grid container>
       <Grid item xs={12}>
         <Box mt={2} mb={2}>
-          <Typography variant="h5">Todos</Typography>
+          <Typography variant="h5">Query Todos</Typography>
           {data && (
             <>
               <small>Updated At: {new Date(data.ts).toLocaleTimeString()}</small>

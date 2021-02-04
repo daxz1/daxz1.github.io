@@ -4,7 +4,7 @@ import { ThemeProvider } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Provider } from 'react-redux';
-import {configureStore} from './redux/store';
+import { configureStore } from './redux/store';
 import Layout from './components/Layout';
 
 const queryClient = new QueryClient();
