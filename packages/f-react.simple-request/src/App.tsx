@@ -47,6 +47,10 @@ export default function App ():JSX.Element {
     })();
   })
 
+  if (character === undefined) {
+    return (<div>Loading</div>)
+  }
+
   return (
     <div>
       {character?.id}
