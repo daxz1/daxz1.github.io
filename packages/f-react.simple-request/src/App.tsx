@@ -19,7 +19,8 @@ interface ICharacter {
   type: string;
 }
 
-const fetchCharacter = async (id: string | undefined): Promise<ICharacter> => {
+async function fetchCharacter (id: string | undefined): Promise<ICharacter> {
+  // This line can be removed
   await sleep(5000);
   if (id === undefined) {
     throw new Error('id undefined');
@@ -29,12 +30,12 @@ const fetchCharacter = async (id: string | undefined): Promise<ICharacter> => {
     throw new Error('Fetch Error');
   }
   return await response.json();
-};
-
+}
 
 export default function App ():JSX.Element {
 
   const [character, setCharacter] = useState(undefined as ICharacter | undefined);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(()=> {
     (async () => {
@@ -43,9 +44,14 @@ export default function App ():JSX.Element {
         setCharacter(response);
       } catch (e) {
         // Set an
+        setHasError(true);
       }
     })();
   })
+
+  if (hasError) {
+    return <div>Error</div>
+  }
 
   if (character === undefined) {
     return (<div>Loading</div>)
