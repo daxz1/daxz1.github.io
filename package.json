@@ -3,16 +3,9 @@
   "name": "daxz1.github.io",
   "workspaces": ["packages/*"],
   "scripts": {
-    "ghp": "yarn workspace site-ghp start",
-    "ghp-sb": "yarn workspace site-ghp storybook",
-    "ghp-test": "yarn workspace site-ghp test",
-    "start": "concurrently --kill-others-on-fail \"yarn dashboard\"  \"yarn ghp\" ",
-    "start-development": "concurrently --kill-others-on-fail  \"yarn ghp\" \"yarn ghp-sb\" ",
-
     "rq:frontend": "yarn workspace f-react.query start",
     "rq:backend": "yarn workspace s-react.query start",
     "rq": "concurrently --kill-others-on-fail \"yarn rq:frontend\"  \"yarn rq:backend\" "
-
   },
   "dependencies": {
     "concurrently": "^5.3.0"
